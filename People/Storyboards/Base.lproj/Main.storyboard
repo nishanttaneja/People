@@ -12,7 +12,23 @@
         <scene sceneID="7EV-LC-buK">
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" title="Page" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="cDL-Cj-FVy" customClass="PageVC" customModule="People" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Some Title" id="poG-OA-tjf"/>
+                    <navigationItem key="navigationItem" id="poG-OA-tjf">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="uf0-yJ-jsh">
+                            <rect key="frame" x="12" y="6" width="390" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Users"/>
+                                <segment title="Enroll"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentedControlValueDidChange:" destination="cDL-Cj-FVy" eventType="valueChanged" id="vcG-eK-dEd"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segmentedControl" destination="uf0-yJ-jsh" id="QHZ-P1-60X"/>
+                    </connections>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uk0-bI-DlQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

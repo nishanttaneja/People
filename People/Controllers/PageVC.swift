@@ -8,6 +8,8 @@
 import UIKit
 
 class PageVC: UIPageViewController {
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
     /// Returns list of ViewControllers to use as swipable pages in PageViewController.
     private lazy var pages: [UIViewController]? = {
         if let peopleListVC = storyboard?.instantiateViewController(withIdentifier: PeopleListTVC.storyboardID),
@@ -16,6 +18,17 @@ class PageVC: UIPageViewController {
         }
         return nil
     }()
+    
+    // IBActions
+    @IBAction func segmentedControlValueDidChange(_ sender: UISegmentedControl) {
+        let selectedIndex = sender.selectedSegmentIndex
+        if let pages = pages,
+           (0..<pages.count).contains(selectedIndex),
+           let currentVC = viewControllers?.first,
+           let currentIndex = pages.firstIndex(of: currentVC) {
+            setViewControllers([pages[selectedIndex]], direction: selectedIndex > currentIndex ? .forward : .reverse, animated: true, completion: nil)
+        }
+    }
 }
 
 //MARK:- Supporting Methods
@@ -26,7 +39,6 @@ extension PageVC {
             setViewControllers([defaultVC], direction: .forward, animated: true, completion: nil)
         }
     }
-    
     /// This method assigns all required delegates and data sources.
     private func assignDelegatesAndDataSources() {
         delegate = self
@@ -35,7 +47,16 @@ extension PageVC {
 }
 
 //MARK:- UIPageViewController Delegate
-extension PageVC: UIPageViewControllerDelegate {}
+extension PageVC: UIPageViewControllerDelegate {
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if finished,
+           completed,
+           let currentVC = viewControllers?.first,
+           let currentIndex = pages?.firstIndex(of: currentVC) {
+            segmentedControl.selectedSegmentIndex = currentIndex
+        }
+    }
+}
 
 //MARK:- UIPageViewController DataSource
 extension PageVC: UIPageViewControllerDataSource {
