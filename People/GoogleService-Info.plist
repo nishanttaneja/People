@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>701677465533-8c9sf1pgq1dnastqunojq8ie1cfvef4d.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.701677465533-8c9sf1pgq1dnastqunojq8ie1cfvef4d</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCJXOxzeSDSJ_zcUKkLPgXbVOc2RgpMwmA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>701677465533</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.nishanttaneja.People</string>
+	<key>PROJECT_ID</key>
+	<string>people-58594</string>
+	<key>STORAGE_BUCKET</key>
+	<string>people-58594.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:701677465533:ios:68b4b139b398ba61d36cd4</string>
+	<key>DATABASE_URL</key>
+	<string>https://people-58594-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

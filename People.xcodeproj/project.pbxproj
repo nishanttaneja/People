@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		B435892225A5A0F900F9B7DB /* PeopleListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B435892125A5A0F900F9B7DB /* PeopleListTVC.swift */; };
 		B435892525A5A1C100F9B7DB /* EnrollPersonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B435892425A5A1C100F9B7DB /* EnrollPersonVC.swift */; };
 		B435892825A5A5D200F9B7DB /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = B435892725A5A5D200F9B7DB /* Person.swift */; };
+		B435895925A5C22D00F9B7DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B435895825A5C22D00F9B7DB /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B435892125A5A0F900F9B7DB /* PeopleListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListTVC.swift; sourceTree = "<group>"; };
 		B435892425A5A1C100F9B7DB /* EnrollPersonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollPersonVC.swift; sourceTree = "<group>"; };
 		B435892725A5A5D200F9B7DB /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		B435895825A5C22D00F9B7DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EA542108445BE847966DCB22 /* Pods-People.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-People.release.xcconfig"; path = "Target Support Files/Pods-People/Pods-People.release.xcconfig"; sourceTree = "<group>"; };
 		EDB74D5C6431461AEA2F4046 /* Pods_People.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_People.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -54,7 +56,6 @@
 				3197F90E8246CCFE81C488D4 /* Pods-People.debug.xcconfig */,
 				EA542108445BE847966DCB22 /* Pods-People.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -86,6 +87,7 @@
 				B435891925A59F8A00F9B7DB /* Storyboards */,
 				B435890C25A59F6900F9B7DB /* Assets.xcassets */,
 				B435891125A59F6900F9B7DB /* Info.plist */,
+				B435895825A5C22D00F9B7DB /* GoogleService-Info.plist */,
 			);
 			path = People;
 			sourceTree = "<group>";
@@ -185,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B435891025A59F6900F9B7DB /* LaunchScreen.storyboard in Resources */,
+				B435895925A5C22D00F9B7DB /* GoogleService-Info.plist in Resources */,
 				B435890D25A59F6900F9B7DB /* Assets.xcassets in Resources */,
 				B435890B25A59F6500F9B7DB /* Main.storyboard in Resources */,
 			);
