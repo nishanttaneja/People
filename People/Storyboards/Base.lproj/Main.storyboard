@@ -42,7 +42,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLJ-Ha-8cF">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="JLJ-Ha-8cF">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1c-Wa-sIR">
@@ -76,6 +76,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="given-name"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="xnR-BT-EfK" id="9QS-17-zLr"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Last NAme" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DDI-VU-Pye">
                                                 <rect key="frame" x="0.0" y="50" width="374" height="40"/>
@@ -84,6 +87,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="family-name"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="xnR-BT-EfK" id="LJX-ID-8IZ"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="DOB" borderStyle="roundedRect" placeholder="Date of birth" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zwh-J3-OPG">
                                                 <rect key="frame" x="0.0" y="100" width="374" height="40"/>
@@ -92,6 +98,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="xnR-BT-EfK" id="Y70-jf-CKm"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Gender" borderStyle="roundedRect" placeholder="Gender" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JTW-rZ-coo">
                                                 <rect key="frame" x="0.0" y="150" width="374" height="40"/>
@@ -100,6 +109,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="xnR-BT-EfK" id="8xS-rJ-tCV"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Country" borderStyle="roundedRect" placeholder="Country" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zik-Cg-0fA">
                                                 <rect key="frame" x="0.0" y="200" width="374" height="40"/>
@@ -108,6 +120,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="xnR-BT-EfK" id="bpX-ZY-bqO"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Stat" borderStyle="roundedRect" placeholder="State" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x2q-zD-WX3">
                                                 <rect key="frame" x="0.0" y="250" width="374" height="40"/>
@@ -116,6 +131,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="xnR-BT-EfK" id="AKQ-F7-IUL"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="home" borderStyle="roundedRect" placeholder="Hometown" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WH9-LU-bmR">
                                                 <rect key="frame" x="0.0" y="300" width="374" height="40"/>
@@ -124,6 +142,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="xnR-BT-EfK" id="ANc-K9-xFe"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123213" borderStyle="roundedRect" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jq3-Dj-wKt">
                                                 <rect key="frame" x="0.0" y="350" width="374" height="40"/>
@@ -131,7 +152,10 @@
                                                     <constraint firstAttribute="height" constant="40" id="qQ3-OE-56s"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="xnR-BT-EfK" id="3IF-gU-ihY"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="903439023" borderStyle="roundedRect" placeholder="Telephone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="te2-mG-abg">
                                                 <rect key="frame" x="0.0" y="400" width="374" height="40"/>
@@ -139,7 +163,10 @@
                                                     <constraint firstAttribute="height" constant="40" id="ZxY-sQ-i5Z"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="join" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="join" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="xnR-BT-EfK" id="Ziw-Hb-pEg"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -186,6 +213,7 @@
                         <outlet property="lastNameTextField" destination="DDI-VU-Pye" id="8vX-gF-xTq"/>
                         <outlet property="phoneNumberTextField" destination="jq3-Dj-wKt" id="EiM-gc-qBg"/>
                         <outlet property="profileImageView" destination="OgP-bl-iAR" id="N6I-FE-wBY"/>
+                        <outlet property="scrollView" destination="JLJ-Ha-8cF" id="cKM-Tn-xFD"/>
                         <outlet property="selectProfilePhotoButton" destination="a1c-Wa-sIR" id="ES0-Tb-1jE"/>
                         <outlet property="stateTextField" destination="x2q-zD-WX3" id="SN7-v9-TpJ"/>
                         <outlet property="telephoneNumberTextField" destination="te2-mG-abg" id="t6x-JO-3Is"/>

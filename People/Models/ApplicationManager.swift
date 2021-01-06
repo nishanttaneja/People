@@ -37,7 +37,6 @@ struct ApplicationManager {
                 maxID = person.id
             }
         }
-        print(maxID)
         return maxID
     }
     
@@ -84,21 +83,16 @@ struct ApplicationManager {
     }
     
     static func didFetchImage(for person: Person, executeAfterCompletion onCompletion: @escaping (_ image: UIImage?) -> Void) {
-        print("looking for image...")
         if let image = imageWithName[person.phone_number] {
-            print("found image")
             onCompletion(image)
             return
         }
-        print("downloading image...")
         storageReference.child(person.phone_number).getData(maxSize: 1*1024*1024) { (data, error) in
             if let data = data {
-                print("downloaded image")
                 let image = UIImage(data: data)
                 imageWithName.updateValue(image, forKey: person.phone_number)
                 onCompletion(image)
             }
         }
     }
-    
 }
