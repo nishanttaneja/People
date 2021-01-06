@@ -6,8 +6,6 @@ target 'People' do
   use_frameworks!
 
   # Pods for People
-  pod 'Firebase/Auth'
-  pod 'Firebase/Firestore'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
 end

@@ -32,19 +32,7 @@ class EnrollPersonVC: UIViewController {
         present(imagePicketController, animated: true, completion: nil)
     }
     @IBAction func addUserButtonPressed(_ sender: UIButton) {
-        let person = Person(
-            first_name: firstNameTextField.text!,
-            last_name: lastNameTextField.text!,
-            date_of_birth: dateOfBirthTextField.text!,
-            gender: genderTextField.text!,
-            country: countryTextField.text!,
-            state: stateTextField.text!,
-            hometown: hometownTextField.text!,
-            phone_number: phoneNumberTextField.text!,
-            telephone_number: telephoneNumberTextField.text!
-        )
-        ApplicationManager.enroll(person)
-        ApplicationManager.uploadImage(profileImageView.image!, at: person.phone_number)
+        ApplicationManager.enrollPersonWith(image: profileImageView.image!, first_name: firstNameTextField.text!, last_name: lastNameTextField.text!, date_of_birth: dateOfBirthTextField.text!, gender: genderTextField.text!, country: countryTextField.text!, state: stateTextField.text!, hometown: hometownTextField.text!, phone_number: phoneNumberTextField.text!, telephone_number: telephoneNumberTextField.text!)
     }
 }
 

@@ -15,15 +15,34 @@ struct ApplicationManager {
     
     static var imageWithName = [String : UIImage?]()
     
-    static func enroll(_ person: Person) {
-        didReadPeople(onCompletion: { (people) in
-            if !people.contains(where: { $0.phone_number == person.phone_number }) {
-                setValues(for: person)
+    static func enrollPersonWith(image: UIImage, first_name: String, last_name: String, date_of_birth: String, gender: String, country: String, state: String, hometown: String, phone_number: String, telephone_number: String) {
+        didReadPeople { (people) in
+            var shouldReturn = false
+            people.forEach { (person) in
+                if person.phone_number == phone_number {
+                    shouldReturn = true
+                    return
+                }
             }
-        })
+            if shouldReturn { return }
+            setValues(for: Person(id: getMaxID(from: people) + 1, first_name: first_name, last_name: last_name, date_of_birth: date_of_birth, gender: gender, country: country, state: state, hometown: hometown, phone_number: phone_number, telephone_number: telephone_number))
+            uploadImage(image, at: phone_number)
+        }
     }
-        
+    
+    static func getMaxID(from people: [Person]) -> Int {
+        var maxID = people.first?.id ?? 0
+        for person in people {
+            if person.id > maxID {
+                maxID = person.id
+            }
+        }
+        print(maxID)
+        return maxID
+    }
+    
     static func setValues(for person: Person) {
+        databaseReference.child("\(person.phone_number)/id").setValue(person.id)
         databaseReference.child("\(person.phone_number)/first_name").setValue(person.first_name)
         databaseReference.child("\(person.phone_number)/last_name").setValue(person.last_name)
         databaseReference.child("\(person.phone_number)/date_of_birth").setValue(person.date_of_birth)
@@ -81,5 +100,5 @@ struct ApplicationManager {
             }
         }
     }
-
+    
 }

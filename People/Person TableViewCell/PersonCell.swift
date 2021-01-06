@@ -50,6 +50,14 @@ extension PersonCell {
     }
 }
 
+//MARK:- Override Nib
+extension PersonCell {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        profileImageView.layer.cornerRadius = 25
+    }
+}
+
 //MARK:- Static Members
 extension PersonCell {
     static let cellID = "PersonCell"

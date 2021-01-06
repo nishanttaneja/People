@@ -9,7 +9,9 @@ import UIKit
 
 class PeopleListTVC: UITableViewController {
     private var people = [Person]()
-    
+    private var sortedPeople: [Person] {
+        people.sorted(by: { $0.id > $1.id })
+    }
     private var observeChanges = false {
         willSet {
             if newValue {
@@ -58,13 +60,13 @@ extension PeopleListTVC {}
 //MARK:- Override UITableView DataSource
 extension PeopleListTVC {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return people.count
+        return sortedPeople.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PersonCell.cellID, for: indexPath) as? PersonCell
         else { return UITableViewCell() }
         cell.delegate = self
-        cell.person = people[indexPath.row]
+        cell.person = sortedPeople[indexPath.row]
         return cell
     }
 }

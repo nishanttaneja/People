@@ -8,6 +8,7 @@
 import UIKit
 
 struct Person: Codable {
+    let id: Int
     let first_name: String
     let last_name: String
     let date_of_birth: String
