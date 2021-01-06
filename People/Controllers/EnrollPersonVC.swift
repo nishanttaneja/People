@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EnrollPersonVC: UIViewController {
+class EnrollPersonVC: UIViewController {    
     // IBOutlets
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var firstNameTextField: UITextField!
@@ -22,11 +22,30 @@ class EnrollPersonVC: UIViewController {
     
     // IBActions
     @IBAction func selectProfilePhotoButtonPressed(_ sender: UIButton) {}
-    @IBAction func addUserButtonPressed(_ sender: UIButton) {}
+    @IBAction func addUserButtonPressed(_ sender: UIButton) {
+        ApplicationManager.enroll(Person(
+            first_name: firstNameTextField.text!,
+            last_name: lastNameTextField.text!,
+            date_of_birth: dateOfBirthTextField.text!,
+            gender: genderTextField.text!,
+            country: countryTextField.text!,
+            state: stateTextField.text!,
+            hometown: hometownTextField.text!,
+            phone_number: phoneNumberTextField.text!,
+            telephone_number: telephoneNumberTextField.text!
+        ))
+    }
 }
 
-//MARK:- Override View
+//MARK:- Firebase SupportingMethods
 extension EnrollPersonVC {}
+
+//MARK:- Override View
+extension EnrollPersonVC {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
 
 //MARK:- Static Members
 extension EnrollPersonVC {

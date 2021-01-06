@@ -7,15 +7,14 @@
 
 import UIKit
 
-struct Person {
-    let image: UIImage
-    let firstName: String
-    let lastName: String
-    let dateOfBirth: String
+struct Person: Codable {
+    let first_name: String
+    let last_name: String
+    let date_of_birth: String
     let gender: String
     let country: String
     let state: String
     let hometown: String
-    let mobile: String
-    let telephone: String
+    let phone_number: String
+    let telephone_number: String
 }
