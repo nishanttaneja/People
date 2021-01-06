@@ -37,16 +37,6 @@ class EnrollPersonVC: UIViewController {
     }
 }
 
-//MARK:- Firebase SupportingMethods
-extension EnrollPersonVC {}
-
-//MARK:- Override View
-extension EnrollPersonVC {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-}
-
 //MARK:- Static Members
 extension EnrollPersonVC {
     static let storyboardID = "EnrollPersonController"

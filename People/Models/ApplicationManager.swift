@@ -12,7 +12,6 @@ struct ApplicationManager {
     static let databaseReference = Database.database().reference()
     static func enroll(_ person: Person) {
         didReadPeople(onCompletion: { (people) in
-            print(people)
             if !people.contains(where: { $0.phone_number == person.phone_number }) {
                 setValues(for: person)
             }
@@ -35,21 +34,28 @@ struct ApplicationManager {
         var people = [Person]()
         databaseReference.observeSingleEvent(of: .value) { (snapshot) in
             guard let data = snapshot.value as? [String : Any] else { return onCompletion(people) }
-            let decoder = JSONDecoder()
+//            let decoder = JSONDecoder()
             data.forEach { (_, value) in
-                do {
-                    let decodedPerson = try decoder.decode(
-                        Person.self,
-                        from: try JSONSerialization.data(withJSONObject: value, options: [])
-                    )
+                if let decodedPerson = try? decodePerson(form: value) {
                     people.append(decodedPerson)
-                } catch {
-                    print(error.localizedDescription)
                 }
+//                do {
+//                    let decodedPerson = try decoder.decode(
+//                        Person.self,
+//                        from: try JSONSerialization.data(withJSONObject: value, options: [])
+//                    )
+//                } catch {
+//                    print(error.localizedDescription)
+//                }
             }
             onCompletion(people)
         }
     }
     
-    
+    static func decodePerson(form snapshotValue: Any) throws -> Person? {
+        return try JSONDecoder().decode(
+            Person.self,
+            from: try JSONSerialization.data(withJSONObject: snapshotValue, options: [])
+        )
+    }
 }
