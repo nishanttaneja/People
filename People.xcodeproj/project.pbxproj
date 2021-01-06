@@ -15,6 +15,7 @@
 		B435891D25A5A02C00F9B7DB /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B435891C25A5A02C00F9B7DB /* PageVC.swift */; };
 		B435892225A5A0F900F9B7DB /* PeopleListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B435892125A5A0F900F9B7DB /* PeopleListTVC.swift */; };
 		B435892525A5A1C100F9B7DB /* EnrollPersonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B435892425A5A1C100F9B7DB /* EnrollPersonVC.swift */; };
+		B435892825A5A5D200F9B7DB /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = B435892725A5A5D200F9B7DB /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B435891C25A5A02C00F9B7DB /* PageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
 		B435892125A5A0F900F9B7DB /* PeopleListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListTVC.swift; sourceTree = "<group>"; };
 		B435892425A5A1C100F9B7DB /* EnrollPersonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollPersonVC.swift; sourceTree = "<group>"; };
+		B435892725A5A5D200F9B7DB /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				B435890325A59F6500F9B7DB /* AppDelegate.swift */,
 				B435890525A59F6500F9B7DB /* SceneDelegate.swift */,
+				B435892A25A5A5D600F9B7DB /* Models */,
 				B435891F25A5A02F00F9B7DB /* Controllers */,
 				B435891925A59F8A00F9B7DB /* Storyboards */,
 				B435890C25A59F6900F9B7DB /* Assets.xcassets */,
@@ -87,6 +90,14 @@
 				B435892425A5A1C100F9B7DB /* EnrollPersonVC.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B435892A25A5A5D600F9B7DB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B435892725A5A5D200F9B7DB /* Person.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B435892825A5A5D200F9B7DB /* Person.swift in Sources */,
 				B435892225A5A0F900F9B7DB /* PeopleListTVC.swift in Sources */,
 				B435890425A59F6500F9B7DB /* AppDelegate.swift in Sources */,
 				B435891D25A5A02C00F9B7DB /* PageVC.swift in Sources */,
