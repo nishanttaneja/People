@@ -21,6 +21,7 @@
 		B435895D25A5D33D00F9B7DB /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B435895C25A5D33D00F9B7DB /* ApplicationManager.swift */; };
 		B435896925A5F10300F9B7DB /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B435896725A5F10300F9B7DB /* PersonCell.swift */; };
 		B435896A25A5F10300F9B7DB /* PersonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B435896825A5F10300F9B7DB /* PersonCell.xib */; };
+		B466BDFA25A6226C00C8C36E /* PersonCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B466BDF925A6226C00C8C36E /* PersonCellDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		B435895C25A5D33D00F9B7DB /* ApplicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
 		B435896725A5F10300F9B7DB /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		B435896825A5F10300F9B7DB /* PersonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonCell.xib; sourceTree = "<group>"; };
+		B466BDF925A6226C00C8C36E /* PersonCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCellDelegate.swift; sourceTree = "<group>"; };
 		EA542108445BE847966DCB22 /* Pods-People.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-People.release.xcconfig"; path = "Target Support Files/Pods-People/Pods-People.release.xcconfig"; sourceTree = "<group>"; };
 		EDB74D5C6431461AEA2F4046 /* Pods_People.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_People.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -130,6 +132,7 @@
 		B435896C25A5F10700F9B7DB /* Person TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				B466BDF925A6226C00C8C36E /* PersonCellDelegate.swift */,
 				B435896725A5F10300F9B7DB /* PersonCell.swift */,
 				B435896825A5F10300F9B7DB /* PersonCell.xib */,
 			);
@@ -266,6 +269,7 @@
 				B435890425A59F6500F9B7DB /* AppDelegate.swift in Sources */,
 				B435891D25A5A02C00F9B7DB /* PageVC.swift in Sources */,
 				B435895D25A5D33D00F9B7DB /* ApplicationManager.swift in Sources */,
+				B466BDFA25A6226C00C8C36E /* PersonCellDelegate.swift in Sources */,
 				B435892525A5A1C100F9B7DB /* EnrollPersonVC.swift in Sources */,
 				B435890625A59F6500F9B7DB /* SceneDelegate.swift in Sources */,
 			);

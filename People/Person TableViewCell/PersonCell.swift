@@ -9,6 +9,7 @@ import UIKit
 
 class PersonCell: UITableViewCell {
     // Variable
+    var delegate: PersonCellDelegate?
     var person: Person? {
         willSet {
             if newValue != nil {
@@ -25,7 +26,11 @@ class PersonCell: UITableViewCell {
     @IBOutlet weak var stateLabel: UILabel!
     
     // IBAction
-    @IBAction func removeButtonPressed(_ sender: UIButton!) {}
+    @IBAction func removeButtonPressed(_ sender: UIButton!) {
+        if person != nil {
+            delegate?.didSelectRemoveOption(for: person!)
+        }
+    }
 }
 
 //MARK:- Supporting Methods

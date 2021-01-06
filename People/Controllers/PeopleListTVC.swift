@@ -44,6 +44,13 @@ extension PeopleListTVC {
     }
 }
 
+//MARK:- PersonCell Delegate
+extension PeopleListTVC: PersonCellDelegate {
+    func didSelectRemoveOption(for person: Person) {
+            ApplicationManager.databaseReference.child("\(person.phone_number)").removeValue()
+    }
+}
+
 //MARK:- Override UITableView Delegate
 extension PeopleListTVC {}
 
@@ -55,6 +62,7 @@ extension PeopleListTVC {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PersonCell.cellID, for: indexPath) as? PersonCell
         else { return UITableViewCell() }
+        cell.delegate = self
         cell.person = people[indexPath.row]
         return cell
     }
