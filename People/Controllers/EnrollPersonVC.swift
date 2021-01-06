@@ -7,9 +7,13 @@
 
 import UIKit
 
-class EnrollPersonVC: UIViewController {    
+class EnrollPersonVC: UIViewController {
+    // Constant
+    private let imagePicketController = UIImagePickerController()
+    
     // IBOutlets
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var selectProfilePhotoButton: UIButton!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var dateOfBirthTextField: UITextField!
@@ -21,7 +25,12 @@ class EnrollPersonVC: UIViewController {
     @IBOutlet weak var telephoneNumberTextField: UITextField!
     
     // IBActions
-    @IBAction func selectProfilePhotoButtonPressed(_ sender: UIButton) {}
+    @IBAction func profilePhotoButtonPressed(_ sender: UIButton) {
+        present(imagePicketController, animated: true, completion: nil)
+    }
+    @IBAction func selectProfilePhotoButtonPressed(_ sender: UIButton) {
+        present(imagePicketController, animated: true, completion: nil)
+    }
     @IBAction func addUserButtonPressed(_ sender: UIButton) {
         ApplicationManager.enroll(Person(
             first_name: firstNameTextField.text!,
@@ -34,6 +43,30 @@ class EnrollPersonVC: UIViewController {
             phone_number: phoneNumberTextField.text!,
             telephone_number: telephoneNumberTextField.text!
         ))
+    }
+}
+
+//MARK:- UIImagePickerController
+extension EnrollPersonVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let selectedImage = info[.editedImage] as? UIImage {
+//            profilePhotoButton.setBackgroundImage(selectedImage, for: .normal)
+            profileImageView.image = selectedImage
+            selectProfilePhotoButton.setTitle("Update Profile Photo?", for: .normal)
+            selectProfilePhotoButton.setTitleColor(.green, for: .normal)
+            dismiss(animated: true, completion: nil)
+        }
+    }
+}
+
+//MARK:- Override View
+extension EnrollPersonVC {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        profileImageView.layer.cornerRadius = 25
+        imagePicketController.sourceType = .photoLibrary
+        imagePicketController.allowsEditing = true
+        imagePicketController.delegate = self
     }
 }
 
