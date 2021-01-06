@@ -19,6 +19,8 @@
 		B435892825A5A5D200F9B7DB /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = B435892725A5A5D200F9B7DB /* Person.swift */; };
 		B435895925A5C22D00F9B7DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B435895825A5C22D00F9B7DB /* GoogleService-Info.plist */; };
 		B435895D25A5D33D00F9B7DB /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B435895C25A5D33D00F9B7DB /* ApplicationManager.swift */; };
+		B435896925A5F10300F9B7DB /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B435896725A5F10300F9B7DB /* PersonCell.swift */; };
+		B435896A25A5F10300F9B7DB /* PersonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B435896825A5F10300F9B7DB /* PersonCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		B435892725A5A5D200F9B7DB /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		B435895825A5C22D00F9B7DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B435895C25A5D33D00F9B7DB /* ApplicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
+		B435896725A5F10300F9B7DB /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		B435896825A5F10300F9B7DB /* PersonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonCell.xib; sourceTree = "<group>"; };
 		EA542108445BE847966DCB22 /* Pods-People.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-People.release.xcconfig"; path = "Target Support Files/Pods-People/Pods-People.release.xcconfig"; sourceTree = "<group>"; };
 		EDB74D5C6431461AEA2F4046 /* Pods_People.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_People.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -87,6 +91,7 @@
 				B435892A25A5A5D600F9B7DB /* Models */,
 				B435891F25A5A02F00F9B7DB /* Controllers */,
 				B435891925A59F8A00F9B7DB /* Storyboards */,
+				B435896C25A5F10700F9B7DB /* Person TableViewCell */,
 				B435890C25A59F6900F9B7DB /* Assets.xcassets */,
 				B435891125A59F6900F9B7DB /* Info.plist */,
 				B435895825A5C22D00F9B7DB /* GoogleService-Info.plist */,
@@ -120,6 +125,15 @@
 				B435895C25A5D33D00F9B7DB /* ApplicationManager.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B435896C25A5F10700F9B7DB /* Person TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B435896725A5F10300F9B7DB /* PersonCell.swift */,
+				B435896825A5F10300F9B7DB /* PersonCell.xib */,
+			);
+			path = "Person TableViewCell";
 			sourceTree = "<group>";
 		};
 		E95CAE0687A858CE9F5C4D37 /* Frameworks */ = {
@@ -192,6 +206,7 @@
 				B435891025A59F6900F9B7DB /* LaunchScreen.storyboard in Resources */,
 				B435895925A5C22D00F9B7DB /* GoogleService-Info.plist in Resources */,
 				B435890D25A59F6900F9B7DB /* Assets.xcassets in Resources */,
+				B435896A25A5F10300F9B7DB /* PersonCell.xib in Resources */,
 				B435890B25A59F6500F9B7DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,6 +262,7 @@
 			files = (
 				B435892825A5A5D200F9B7DB /* Person.swift in Sources */,
 				B435892225A5A0F900F9B7DB /* PeopleListTVC.swift in Sources */,
+				B435896925A5F10300F9B7DB /* PersonCell.swift in Sources */,
 				B435890425A59F6500F9B7DB /* AppDelegate.swift in Sources */,
 				B435891D25A5A02C00F9B7DB /* PageVC.swift in Sources */,
 				B435895D25A5D33D00F9B7DB /* ApplicationManager.swift in Sources */,

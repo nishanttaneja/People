@@ -53,13 +53,19 @@ extension PeopleListTVC {
         return people.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PersonCell.cellID, for: indexPath) as? PersonCell
+        else { return UITableViewCell() }
+        cell.person = people[indexPath.row]
         return cell
     }
 }
 
 //MARK:- Override View
 extension PeopleListTVC {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.register(PersonCell.cellNib, forCellReuseIdentifier: PersonCell.cellID)
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         observeChanges = true
