@@ -36,9 +36,17 @@ class PersonCell: UITableViewCell {
 //MARK:- Supporting Methods
 extension PersonCell {
     private func updateCell(with person: Person) {
-        nameLabel.text = "\(person.first_name) \(person.last_name)"
-        genderLabel.text = person.gender
-        stateLabel.text = person.state
+        DispatchQueue.main.async {
+            self.profileImageView.image = UIImage(systemName: "person.fill")
+            ApplicationManager.didFetchImage(for: person) { (image) in
+                if person.phone_number == self.person?.phone_number {
+                    self.profileImageView.image = image
+                }
+            }
+            self.nameLabel.text = "\(person.phone_number) \(person.last_name)"
+            self.genderLabel.text = person.gender
+            self.stateLabel.text = person.state
+        }
     }
 }
 

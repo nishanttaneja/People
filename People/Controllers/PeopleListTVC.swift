@@ -48,6 +48,7 @@ extension PeopleListTVC {
 extension PeopleListTVC: PersonCellDelegate {
     func didSelectRemoveOption(for person: Person) {
             ApplicationManager.databaseReference.child("\(person.phone_number)").removeValue()
+        ApplicationManager.storageReference.child(person.phone_number).delete()
     }
 }
 

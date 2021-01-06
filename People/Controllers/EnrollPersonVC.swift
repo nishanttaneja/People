@@ -32,7 +32,7 @@ class EnrollPersonVC: UIViewController {
         present(imagePicketController, animated: true, completion: nil)
     }
     @IBAction func addUserButtonPressed(_ sender: UIButton) {
-        ApplicationManager.enroll(Person(
+        let person = Person(
             first_name: firstNameTextField.text!,
             last_name: lastNameTextField.text!,
             date_of_birth: dateOfBirthTextField.text!,
@@ -42,7 +42,9 @@ class EnrollPersonVC: UIViewController {
             hometown: hometownTextField.text!,
             phone_number: phoneNumberTextField.text!,
             telephone_number: telephoneNumberTextField.text!
-        ))
+        )
+        ApplicationManager.enroll(person)
+        ApplicationManager.uploadImage(profileImageView.image!, at: person.phone_number)
     }
 }
 
@@ -50,7 +52,6 @@ class EnrollPersonVC: UIViewController {
 extension EnrollPersonVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let selectedImage = info[.editedImage] as? UIImage {
-//            profilePhotoButton.setBackgroundImage(selectedImage, for: .normal)
             profileImageView.image = selectedImage
             selectProfilePhotoButton.setTitle("Update Profile Photo?", for: .normal)
             selectProfilePhotoButton.setTitleColor(.green, for: .normal)

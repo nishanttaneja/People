@@ -7,9 +7,14 @@
 
 import Foundation
 import Firebase
+import FirebaseStorage
 
 struct ApplicationManager {
     static let databaseReference = Database.database().reference()
+    static let storageReference = Storage.storage().reference()
+    
+    static var imageWithName = [String : UIImage?]()
+    
     static func enroll(_ person: Person) {
         didReadPeople(onCompletion: { (people) in
             if !people.contains(where: { $0.phone_number == person.phone_number }) {
@@ -34,19 +39,10 @@ struct ApplicationManager {
         var people = [Person]()
         databaseReference.observeSingleEvent(of: .value) { (snapshot) in
             guard let data = snapshot.value as? [String : Any] else { return onCompletion(people) }
-//            let decoder = JSONDecoder()
             data.forEach { (_, value) in
                 if let decodedPerson = try? decodePerson(form: value) {
                     people.append(decodedPerson)
                 }
-//                do {
-//                    let decodedPerson = try decoder.decode(
-//                        Person.self,
-//                        from: try JSONSerialization.data(withJSONObject: value, options: [])
-//                    )
-//                } catch {
-//                    print(error.localizedDescription)
-//                }
             }
             onCompletion(people)
         }
@@ -58,4 +54,32 @@ struct ApplicationManager {
             from: try JSONSerialization.data(withJSONObject: snapshotValue, options: [])
         )
     }
+    
+    
+    static func uploadImage(_ image: UIImage, at path: String) {
+        if let data = image.jpegData(compressionQuality: 0.8) {
+            let metadata = StorageMetadata()
+            metadata.contentType = "image/jpg"
+            storageReference.child(path).putData(data, metadata: metadata)
+        }
+    }
+    
+    static func didFetchImage(for person: Person, executeAfterCompletion onCompletion: @escaping (_ image: UIImage?) -> Void) {
+        print("looking for image...")
+        if let image = imageWithName[person.phone_number] {
+            print("found image")
+            onCompletion(image)
+            return
+        }
+        print("downloading image...")
+        storageReference.child(person.phone_number).getData(maxSize: 1*1024*1024) { (data, error) in
+            if let data = data {
+                print("downloaded image")
+                let image = UIImage(data: data)
+                imageWithName.updateValue(image, forKey: person.phone_number)
+                onCompletion(image)
+            }
+        }
+    }
+
 }
