@@ -21,6 +21,7 @@
                                 <segment title="Users"/>
                                 <segment title="Enroll"/>
                             </segments>
+                            <color key="selectedSegmentTintColor" systemColor="systemTealColor"/>
                             <connections>
                                 <action selector="segmentedControlValueDidChange:" destination="cDL-Cj-FVy" eventType="valueChanged" id="vcG-eK-dEd"/>
                             </connections>
@@ -52,15 +53,18 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Select Profile Photo">
-                                            <color key="titleColor" red="0.0011307648379999999" green="0.30124688150000001" blue="0.50000005960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" systemColor="systemTealColor"/>
                                         </state>
                                         <connections>
                                             <action selector="selectProfilePhotoButtonPressed:" destination="xnR-BT-EfK" eventType="touchUpInside" id="5hZ-cO-4Vi"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5oW-dk-5lp">
-                                        <rect key="frame" x="20" y="630" width="374" height="30"/>
-                                        <color key="backgroundColor" red="0.0011307648379999999" green="0.30124688150000001" blue="0.50000005960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="630" width="414" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="hhN-QD-Kb8"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
                                         <state key="normal" title="ADD USER">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -72,7 +76,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hMG-aC-4qC">
                                         <rect key="frame" x="20" y="170" width="374" height="440"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First NAme" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xab-ih-L4W">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xab-ih-L4W">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="given-name"/>
@@ -80,7 +84,7 @@
                                                     <outlet property="delegate" destination="xnR-BT-EfK" id="9QS-17-zLr"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Last NAme" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DDI-VU-Pye">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DDI-VU-Pye">
                                                 <rect key="frame" x="0.0" y="50" width="374" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="fw4-eL-IF1"/>
@@ -91,7 +95,7 @@
                                                     <outlet property="delegate" destination="xnR-BT-EfK" id="LJX-ID-8IZ"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="DOB" borderStyle="roundedRect" placeholder="Date of birth" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zwh-J3-OPG">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date of birth" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zwh-J3-OPG">
                                                 <rect key="frame" x="0.0" y="100" width="374" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="nra-n5-dHC"/>
@@ -102,7 +106,7 @@
                                                     <outlet property="delegate" destination="xnR-BT-EfK" id="Y70-jf-CKm"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Gender" borderStyle="roundedRect" placeholder="Gender" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JTW-rZ-coo">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gender" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JTW-rZ-coo">
                                                 <rect key="frame" x="0.0" y="150" width="374" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="O0D-bQ-a0m"/>
@@ -113,7 +117,7 @@
                                                     <outlet property="delegate" destination="xnR-BT-EfK" id="8xS-rJ-tCV"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Country" borderStyle="roundedRect" placeholder="Country" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zik-Cg-0fA">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zik-Cg-0fA">
                                                 <rect key="frame" x="0.0" y="200" width="374" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="hlL-Qc-jGQ"/>
@@ -124,7 +128,7 @@
                                                     <outlet property="delegate" destination="xnR-BT-EfK" id="bpX-ZY-bqO"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Stat" borderStyle="roundedRect" placeholder="State" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x2q-zD-WX3">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x2q-zD-WX3">
                                                 <rect key="frame" x="0.0" y="250" width="374" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="tMz-QN-zX0"/>
@@ -135,7 +139,7 @@
                                                     <outlet property="delegate" destination="xnR-BT-EfK" id="AKQ-F7-IUL"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="home" borderStyle="roundedRect" placeholder="Hometown" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WH9-LU-bmR">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hometown" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WH9-LU-bmR">
                                                 <rect key="frame" x="0.0" y="300" width="374" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="KFO-5u-8rv"/>
@@ -146,7 +150,7 @@
                                                     <outlet property="delegate" destination="xnR-BT-EfK" id="ANc-K9-xFe"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123213" borderStyle="roundedRect" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jq3-Dj-wKt">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jq3-Dj-wKt">
                                                 <rect key="frame" x="0.0" y="350" width="374" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="qQ3-OE-56s"/>
@@ -157,7 +161,7 @@
                                                     <outlet property="delegate" destination="xnR-BT-EfK" id="3IF-gU-ihY"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="903439023" borderStyle="roundedRect" placeholder="Telephone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="te2-mG-abg">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Telephone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="te2-mG-abg">
                                                 <rect key="frame" x="0.0" y="400" width="374" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="ZxY-sQ-i5Z"/>
@@ -172,7 +176,7 @@
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="OgP-bl-iAR">
                                         <rect key="frame" x="157" y="21.5" width="100" height="97"/>
-                                        <color key="tintColor" red="0.0011307648379999999" green="0.30124688150000001" blue="0.50000005960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" systemColor="systemTealColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="56l-k3-eb8"/>
                                             <constraint firstAttribute="height" constant="100" id="RtJ-Aa-Bcr"/>
@@ -180,16 +184,16 @@
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="5oW-dk-5lp" firstAttribute="leading" secondItem="JLJ-Ha-8cF" secondAttribute="leading" constant="20" id="9UV-yS-APF"/>
+                                    <constraint firstItem="5oW-dk-5lp" firstAttribute="leading" secondItem="JLJ-Ha-8cF" secondAttribute="leading" id="9UV-yS-APF"/>
                                     <constraint firstItem="5oW-dk-5lp" firstAttribute="centerX" secondItem="JLJ-Ha-8cF" secondAttribute="centerX" id="9nX-dG-L0r"/>
                                     <constraint firstItem="5oW-dk-5lp" firstAttribute="top" secondItem="hMG-aC-4qC" secondAttribute="bottom" constant="20" id="SUY-wa-xC0"/>
                                     <constraint firstItem="hMG-aC-4qC" firstAttribute="top" secondItem="a1c-Wa-sIR" secondAttribute="bottom" constant="20" id="gNP-0d-s5x"/>
                                     <constraint firstAttribute="trailing" secondItem="hMG-aC-4qC" secondAttribute="trailing" constant="20" id="iib-iC-wMn"/>
                                     <constraint firstItem="hMG-aC-4qC" firstAttribute="leading" secondItem="JLJ-Ha-8cF" secondAttribute="leading" constant="20" id="jem-Ym-Mcr"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5oW-dk-5lp" secondAttribute="trailing" constant="20" id="n1N-7Z-JKg"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5oW-dk-5lp" secondAttribute="trailing" id="n1N-7Z-JKg"/>
                                     <constraint firstItem="OgP-bl-iAR" firstAttribute="centerX" secondItem="JLJ-Ha-8cF" secondAttribute="centerX" id="s6f-0b-3Wn"/>
                                     <constraint firstItem="a1c-Wa-sIR" firstAttribute="top" secondItem="OgP-bl-iAR" secondAttribute="bottom" id="uHz-Ba-MiW"/>
-                                    <constraint firstAttribute="bottom" secondItem="5oW-dk-5lp" secondAttribute="bottom" constant="20" id="uOR-mb-jvC"/>
+                                    <constraint firstAttribute="bottom" secondItem="5oW-dk-5lp" secondAttribute="bottom" id="uOR-mb-jvC"/>
                                     <constraint firstItem="OgP-bl-iAR" firstAttribute="top" secondItem="JLJ-Ha-8cF" secondAttribute="top" constant="20" id="uym-Z2-Wpc"/>
                                     <constraint firstItem="a1c-Wa-sIR" firstAttribute="centerX" secondItem="JLJ-Ha-8cF" secondAttribute="centerX" id="wIe-cq-sC1"/>
                                 </constraints>
@@ -290,6 +294,9 @@
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

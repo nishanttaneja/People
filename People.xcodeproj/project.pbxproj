@@ -23,6 +23,7 @@
 		B435896A25A5F10300F9B7DB /* PersonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B435896825A5F10300F9B7DB /* PersonCell.xib */; };
 		B466BDFA25A6226C00C8C36E /* PersonCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B466BDF925A6226C00C8C36E /* PersonCellDelegate.swift */; };
 		B4C8E84125A679D700D16A4C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C8E84025A679D700D16A4C /* String+Extension.swift */; };
+		B4C8E84425A6844C00D16A4C /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C8E84325A6844C00D16A4C /* Date+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		B435896825A5F10300F9B7DB /* PersonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonCell.xib; sourceTree = "<group>"; };
 		B466BDF925A6226C00C8C36E /* PersonCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCellDelegate.swift; sourceTree = "<group>"; };
 		B4C8E84025A679D700D16A4C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		B4C8E84325A6844C00D16A4C /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		EA542108445BE847966DCB22 /* Pods-People.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-People.release.xcconfig"; path = "Target Support Files/Pods-People/Pods-People.release.xcconfig"; sourceTree = "<group>"; };
 		EDB74D5C6431461AEA2F4046 /* Pods_People.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_People.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -93,6 +95,7 @@
 				B435890325A59F6500F9B7DB /* AppDelegate.swift */,
 				B435890525A59F6500F9B7DB /* SceneDelegate.swift */,
 				B4C8E84025A679D700D16A4C /* String+Extension.swift */,
+				B4C8E84325A6844C00D16A4C /* Date+Extension.swift */,
 				B435892A25A5A5D600F9B7DB /* Models */,
 				B435891F25A5A02F00F9B7DB /* Controllers */,
 				B435891925A59F8A00F9B7DB /* Storyboards */,
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B435892825A5A5D200F9B7DB /* Person.swift in Sources */,
+				B4C8E84425A6844C00D16A4C /* Date+Extension.swift in Sources */,
 				B435892225A5A0F900F9B7DB /* PeopleListTVC.swift in Sources */,
 				B435896925A5F10300F9B7DB /* PersonCell.swift in Sources */,
 				B435890425A59F6500F9B7DB /* AppDelegate.swift in Sources */,

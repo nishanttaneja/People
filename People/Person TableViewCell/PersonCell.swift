@@ -43,9 +43,10 @@ extension PersonCell {
                     self.profileImageView.image = image
                 }
             }
-            self.nameLabel.text = "\(person.phone_number) \(person.last_name)"
+            self.nameLabel.text = "\(person.first_name) \(person.last_name)"
             self.genderLabel.text = person.gender
             self.stateLabel.text = person.state
+            self.ageLabel.text = String(Date.age(from: person.date_of_birth, with: "MM-dd-yyyy"))
         }
     }
 }

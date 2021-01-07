@@ -50,7 +50,6 @@ class EnrollPersonVC: UIViewController {
 extension EnrollPersonVC {
     private func enroll() {
         guard profileImageView.image != nil,
-              profileImageView.image != UIImage(systemName: "person.fill"),
               firstNameTextField.text != nil,
               !firstNameTextField.text!.isEmpty,
               lastNameTextField.text != nil,
@@ -67,8 +66,10 @@ extension EnrollPersonVC {
               !hometownTextField.text!.isEmpty,
               phoneNumberTextField.text != nil,
               !phoneNumberTextField.text!.isEmpty,
+              phoneNumberTextField.text!.isPhoneNumber,
               telephoneNumberTextField.text != nil,
-              !telephoneNumberTextField.text!.isEmpty
+              !telephoneNumberTextField.text!.isEmpty,
+              telephoneNumberTextField.text!.isPhoneNumber
         else {
             print("insufficient data")
             return
@@ -110,6 +111,33 @@ extension EnrollPersonVC {
     }
     private func updateLayers() {
         profileImageView.layer.cornerRadius = 25
+        firstNameTextField.layer.cornerRadius = 5
+        firstNameTextField.layer.borderWidth = 1
+        firstNameTextField.layer.borderColor = UIColor.systemTeal.cgColor
+        lastNameTextField.layer.cornerRadius = 5
+        lastNameTextField.layer.borderWidth = 1
+        lastNameTextField.layer.borderColor = UIColor.systemTeal.cgColor
+        dateOfBirthTextField.layer.cornerRadius = 5
+        dateOfBirthTextField.layer.borderWidth = 1
+        dateOfBirthTextField.layer.borderColor = UIColor.systemTeal.cgColor
+        genderTextField.layer.cornerRadius = 5
+        genderTextField.layer.borderWidth = 1
+        genderTextField.layer.borderColor = UIColor.systemTeal.cgColor
+        countryTextField.layer.cornerRadius = 5
+        countryTextField.layer.borderWidth = 1
+        countryTextField.layer.borderColor = UIColor.systemTeal.cgColor
+        stateTextField.layer.cornerRadius = 5
+        stateTextField.layer.borderWidth = 1
+        stateTextField.layer.borderColor = UIColor.systemTeal.cgColor
+        hometownTextField.layer.cornerRadius = 5
+        hometownTextField.layer.borderWidth = 1
+        hometownTextField.layer.borderColor = UIColor.systemTeal.cgColor
+        phoneNumberTextField.layer.cornerRadius = 5
+        phoneNumberTextField.layer.borderWidth = 1
+        phoneNumberTextField.layer.borderColor = UIColor.systemTeal.cgColor
+        telephoneNumberTextField.layer.cornerRadius = 5
+        telephoneNumberTextField.layer.borderWidth = 1
+        telephoneNumberTextField.layer.borderColor = UIColor.systemTeal.cgColor
     }
     private func configureImagePickerController() {
         imagePicketController.sourceType = .photoLibrary
@@ -208,13 +236,13 @@ extension EnrollPersonVC: UITextFieldDelegate {
         if textField == dateOfBirthTextField {
             updateDOBTextField()
         } else if textField == genderTextField,
-                  textField.text == "" {
+                  textField.text == nil {
             genderTextField.text = genders[0]
         } else if textField == countryTextField,
-                  textField.text == "" {
+                  textField.text == nil {
             countryTextField.text = countries[0]
         } else if textField == stateTextField,
-                  textField.text == "" {
+                  textField.text == nil {
             stateTextField.text = states[0]
         }
     }
@@ -224,6 +252,8 @@ extension EnrollPersonVC: UITextFieldDelegate {
             lastNameTextField.becomeFirstResponder()
         } else if textField == lastNameTextField {
             dateOfBirthTextField.becomeFirstResponder()
+        } else if textField == hometownTextField {
+            phoneNumberTextField.becomeFirstResponder()
         } else if textField == phoneNumberTextField {
             telephoneNumberTextField.becomeFirstResponder()
         } else if textField == telephoneNumberTextField {
